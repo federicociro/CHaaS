@@ -19,3 +19,8 @@ public/
 .DS_Store
 Thumbs.db
 .obsidian/workspace*.json
+
+# Recetas y notas personales — NO publicar (repo PÚBLICO)
+private/
+*.privado.md
+*.local.md
