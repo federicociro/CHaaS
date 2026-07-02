@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+
+# Excel / tracker (archivos de bloqueo temporales — el .xlsx SÍ se versiona)
+~$*.xlsx
+*.tmp
+
+# Quartz / Node
+node_modules/
+public/
+.quartz-cache/
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.obsidian/workspace*.json
