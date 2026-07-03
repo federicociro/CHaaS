@@ -1,4 +1,4 @@
-# Chass
+# CHaaS
 
 Vault de conocimiento para **embutido crudo-curado-fermentado**: procedimientos,
 técnica, runbooks de defectos y normativa, con validación automática de las
