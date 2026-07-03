@@ -1,16 +1,22 @@
-# CHaaS
+# CHaaS — Charcutería as a Service
 
-Vault de conocimiento para **embutido crudo-curado-fermentado**: procedimientos,
-técnica, runbooks de defectos y normativa, con validación automática de las
-**barreras de inocuidad** en cada lote.
+> Sí, parece un repo de código. En realidad es de **chorizos**.
+> CHaaS = *Charcutería as a Service*: un vault de conocimiento para
+> **embutido crudo-curado-fermentado** con la disciplina de un repo de software
+> (frontmatter, CI, runbooks, versionado).
 
-El contenido es Markdown estilo Obsidian (frontmatter + `[[wikilinks]]`) publicable
-con [Quartz](https://quartz.jzhao.xyz/). Un script de CI verifica que la data de
-cada lote respete los umbrales de seguridad antes de liberarlo.
+## About
 
-## Umbrales (barreras de control)
+Notas, procedimientos y runbooks para producir salame / chorizo seco de forma
+reproducible y segura. Cada lote se documenta como una nota Markdown con
+metadata YAML; el CI valida que el vault esté bien formado antes de publicarlo.
 
-Codificados en `scripts/validate.py` y explicados en
+El contenido es Markdown estilo Obsidian (frontmatter + `[[wikilinks]]`)
+publicable con [Quartz](https://quartz.jzhao.xyz/).
+
+## Barreras de inocuidad (referencia)
+
+Los umbrales que hay que respetar en cada lote, documentados en
 [`vault/tecnica/barreras-control.md`](vault/tecnica/barreras-control.md):
 
 | Barrera | Umbral | Controla |
@@ -23,13 +29,13 @@ Codificados en `scripts/validate.py` y explicados en
 ## Estructura
 
 ```text
-chass/
+chaas/
 ├── README.md
-├── requirements.txt              # PyYAML, openpyxl
+├── requirements.txt              # PyYAML
 ├── .gitignore
 ├── .markdownlint-cli2.jsonc
 ├── scripts/
-│   └── validate.py               # frontmatter + wikilinks + umbrales
+│   └── validate.py               # frontmatter + wikilinks
 ├── .github/workflows/
 │   └── ci.yml                    # validate + markdownlint + quartz; lychee semanal
 ├── tracker/
@@ -59,7 +65,7 @@ actualizado: YYYY-MM-DD
 ---
 ```
 
-Las notas de **lote** agregan el bloque que audita el validador:
+Las notas de **lote** agregan el bloque con las mediciones del proceso:
 
 ```yaml
 mediciones:
@@ -79,7 +85,7 @@ Los enlaces entre notas usan `[[nombre-de-archivo]]` (sin extensión), con
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# Validar el vault (frontmatter, wikilinks, umbrales de todos los lotes)
+# Validar el vault (frontmatter + wikilinks)
 python scripts/validate.py
 
 # Lint de Markdown
@@ -88,8 +94,9 @@ npx markdownlint-cli2
 # Publicar con Quartz (ver .github/workflows/ci.yml para el flujo de CI)
 ```
 
-`validate.py` sale con código ≠ 0 si falta frontmatter, hay un wikilink roto o
-algún lote queda fuera de umbral — eso es lo que corta el merge en CI.
+`validate.py` sale con código ≠ 0 si falta frontmatter o hay un wikilink roto —
+eso es lo que corta el merge en CI. Los umbrales de inocuidad se auditan a ojo
+sobre la planilla de lotes; el repo los documenta, no los policía.
 
 ## Runbooks
 
