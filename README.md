@@ -20,6 +20,11 @@ Codificados en `scripts/validate.py` y explicados en
 | Merma (pérdida de peso) | ≥ **30 %** | a_w → estabilidad microbiológica |
 | Grados-hora hasta pH 5.3 | ≤ **665 °F·h** | toxina estafilocócica (AMI) |
 
+Los umbrales se **ramifican por `proceso`**. Un lote `curado-directo` (sin
+fermentación) no acidifica, así que no se le exigen pH ni grados-hora; a cambio
+sube la merma (≥ 35 %) y se acota la temperatura de secado (≤ 15 °C). Ver
+[`vault/tecnica/curado-directo.md`](vault/tecnica/curado-directo.md).
+
 ## Estructura
 
 ```text
@@ -37,6 +42,7 @@ chass/
 └── vault/
     ├── lotes/lote-00.md          # plantilla de lote (bloque `mediciones`)
     ├── tecnica/barreras-control.md
+    ├── tecnica/curado-directo.md  # variante sin fermentación
     ├── procedimientos/Procedimiento-embutido.md
     ├── runbooks/                 # case-hardening, moho-indeseado, fermentacion-fallida
     ├── normativa/normativa-eu-2023-2108.md
@@ -59,14 +65,23 @@ actualizado: YYYY-MM-DD
 ---
 ```
 
-Las notas de **lote** agregan el bloque que audita el validador:
+Las notas de **lote** agregan una clave `proceso` y el bloque que audita el
+validador. Los campos exigidos dependen del `proceso`:
 
 ```yaml
+# proceso: fermentado
 mediciones:
   nitrito_ppm: 78
   ph_final: 5.1
   merma_pct: 34
   grados_hora: 640
+
+# proceso: curado-directo (sin fermentación)
+mediciones:
+  nitrito_ppm: 78
+  merma_pct: 36
+  temp_secado_max_c: 13
+  aw: 0.88          # opcional
 ```
 
 Los enlaces entre notas usan `[[nombre-de-archivo]]` (sin extensión), con

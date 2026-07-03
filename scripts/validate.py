@@ -7,11 +7,17 @@ Verifica, sobre cada nota Markdown de vault/:
   3. Wikilinks [[destino]] resuelven a una nota existente.
   4. Umbrales de seguridad (barreras) en el bloque `mediciones` de los lotes.
 
-Umbrales (ver vault/tecnica/barreras-control.md):
-  - Nitrito ingoing ....... <= 80 ppm
-  - pH final .............. <= 5.3
-  - Merma ................. >= 30 %
-  - Grados-hora (°F·h) .... <= 665
+Umbrales (ver vault/tecnica/barreras-control.md), ramificados por `proceso`:
+  fermentado:
+    - Nitrito ingoing ....... <= 80 ppm
+    - pH final .............. <= 5.3
+    - Merma ................. >= 30 %
+    - Grados-hora (°F·h) .... <= 665
+  curado-directo (sin fermentación → no hay caída de pH):
+    - Nitrito ingoing ....... <= 80 ppm
+    - Merma ................. >= 35 %   (más exigente: compensa la barrera de pH ausente)
+    - Temp. máx. secado ..... <= 15 °C  (frena S. aureus/enterobacterias sin acidificación)
+    - a_w (opcional) ........ <= 0.90
 
 Salida: reporte legible + exit code 1 si hay cualquier error.
 """
@@ -24,16 +30,36 @@ from pathlib import Path
 import yaml
 
 # --- Umbrales de barreras -------------------------------------------------
-LIMITE_NITRITO_PPM = 80.0     # máx. ingoing (Reg. UE 2023/2108)
-LIMITE_PH = 5.3               # techo del pH final de fermentación
-LIMITE_MERMA_PCT = 30.0       # mínimo de pérdida de peso
-LIMITE_GRADOS_HORA = 665.0    # máx. °F·h hasta pH 5.3 (AMI)
+LIMITE_NITRITO_PPM = 80.0        # máx. ingoing (Reg. UE 2023/2108)
+LIMITE_PH = 5.3                  # techo del pH final de fermentación
+LIMITE_MERMA_PCT = 30.0          # mínimo de merma para producto fermentado
+LIMITE_GRADOS_HORA = 665.0       # máx. °F·h hasta pH 5.3 (AMI)
+LIMITE_MERMA_CURADO_PCT = 35.0   # merma mínima sin acidificación (a_w más baja)
+LIMITE_TEMP_SECADO_C = 15.0      # temp. máx. de secado en curado-directo
+LIMITE_AW = 0.90                 # actividad de agua objetivo (opcional, si se mide)
 
 # --- Config ---------------------------------------------------------------
 VAULT = Path(__file__).resolve().parent.parent / "vault"
 CLAVES_REQUERIDAS = {"id", "tipo", "titulo", "estado", "tags", "creado", "actualizado"}
 TIPOS_VALIDOS = {"lote", "tecnica", "procedimiento", "runbook", "normativa", "referencia"}
 ESTADOS_VALIDOS = {"borrador", "activo", "archivado"}
+PROCESOS_VALIDOS = {"fermentado", "curado-directo"}
+
+# Checks por proceso: (campo, comparador, descripción, requerido)
+CHECKS_POR_PROCESO = {
+    "fermentado": [
+        ("nitrito_ppm", lambda v: v <= LIMITE_NITRITO_PPM, f"<= {LIMITE_NITRITO_PPM} ppm", True),
+        ("ph_final", lambda v: v <= LIMITE_PH, f"<= {LIMITE_PH}", True),
+        ("merma_pct", lambda v: v >= LIMITE_MERMA_PCT, f">= {LIMITE_MERMA_PCT} %", True),
+        ("grados_hora", lambda v: v <= LIMITE_GRADOS_HORA, f"<= {LIMITE_GRADOS_HORA} °F·h", True),
+    ],
+    "curado-directo": [
+        ("nitrito_ppm", lambda v: v <= LIMITE_NITRITO_PPM, f"<= {LIMITE_NITRITO_PPM} ppm", True),
+        ("merma_pct", lambda v: v >= LIMITE_MERMA_CURADO_PCT, f">= {LIMITE_MERMA_CURADO_PCT} %", True),
+        ("temp_secado_max_c", lambda v: v <= LIMITE_TEMP_SECADO_C, f"<= {LIMITE_TEMP_SECADO_C} °C", True),
+        ("aw", lambda v: v <= LIMITE_AW, f"<= {LIMITE_AW}", False),
+    ],
+}
 
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n?(.*)$", re.DOTALL)
 # [[destino]] | [[destino|alias]] | [[destino#seccion]] — captura solo el destino
@@ -119,29 +145,35 @@ def validar_wikilinks(notas: list[Nota], errores: list[str]) -> None:
 
 
 def validar_umbrales(notas: list[Nota], errores: list[str]) -> int:
-    """Valida el bloque `mediciones` de las notas de lote. Devuelve nº de lotes OK."""
-    checks = [
-        ("nitrito_ppm", lambda v: v <= LIMITE_NITRITO_PPM, f"<= {LIMITE_NITRITO_PPM} ppm"),
-        ("ph_final", lambda v: v <= LIMITE_PH, f"<= {LIMITE_PH}"),
-        ("merma_pct", lambda v: v >= LIMITE_MERMA_PCT, f">= {LIMITE_MERMA_PCT} %"),
-        ("grados_hora", lambda v: v <= LIMITE_GRADOS_HORA, f"<= {LIMITE_GRADOS_HORA} °F·h"),
-    ]
+    """Valida el bloque `mediciones` de las notas de lote. Devuelve nº de lotes OK.
+
+    Los umbrales se ramifican por la clave `proceso` del lote: un producto
+    `curado-directo` no fermenta, así que no se le exige pH ni grados-hora, pero
+    sí una merma más alta y una temperatura de secado acotada.
+    """
     lotes_ok = 0
     for nota in notas:
         if nota.meta.get("tipo") != "lote":
+            continue
+        proceso = nota.meta.get("proceso")
+        if proceso not in CHECKS_POR_PROCESO:
+            errores.append(
+                f"{nota.rel()}: lote con proceso '{proceso}' inválido (usar {sorted(PROCESOS_VALIDOS)})"
+            )
             continue
         med = nota.meta.get("mediciones")
         if not isinstance(med, dict):
             errores.append(f"{nota.rel()}: lote sin bloque 'mediciones'")
             continue
         fallo = False
-        for campo, ok, desc in checks:
+        for campo, ok, desc, requerido in CHECKS_POR_PROCESO[proceso]:
             if campo not in med:
-                errores.append(f"{nota.rel()}: mediciones sin '{campo}'")
-                fallo = True
+                if requerido:
+                    errores.append(f"{nota.rel()}: mediciones sin '{campo}'")
+                    fallo = True
                 continue
             valor = med[campo]
-            if not isinstance(valor, (int, float)):
+            if not isinstance(valor, (int, float)) or isinstance(valor, bool):
                 errores.append(f"{nota.rel()}: mediciones.{campo} no es numérico")
                 fallo = True
                 continue
@@ -172,9 +204,14 @@ def main() -> int:
     print(f"Notas analizadas : {len(notas)}")
     print(f"Lotes en umbral  : {lotes_ok}")
     print(
-        "Umbrales         : "
+        "Umbrales fermentado     : "
         f"nitrito<={LIMITE_NITRITO_PPM}ppm, pH<={LIMITE_PH}, "
         f"merma>={LIMITE_MERMA_PCT}%, grados-hora<={LIMITE_GRADOS_HORA}"
+    )
+    print(
+        "Umbrales curado-directo : "
+        f"nitrito<={LIMITE_NITRITO_PPM}ppm, merma>={LIMITE_MERMA_CURADO_PCT}%, "
+        f"temp-secado<={LIMITE_TEMP_SECADO_C}°C, aw<={LIMITE_AW} (opc)"
     )
 
     if errores:

@@ -5,9 +5,10 @@ titulo: "Lote 00 — plantilla / lote de referencia"
 estado: activo
 tags: [lote, plantilla, referencia]
 creado: 2026-07-02
-actualizado: 2026-07-02
+actualizado: 2026-07-03
 producto: "Salame tipo Milano"
 responsable: "fede"
+proceso: fermentado          # fermentado | curado-directo
 fecha_embutido: 2026-06-01
 fecha_liberacion: 2026-07-01
 mediciones:
@@ -22,6 +23,12 @@ mediciones:
 Lote de referencia y **plantilla** para nuevos lotes. Los valores del bloque
 `mediciones` en el frontmatter son los que audita `scripts/validate.py` contra
 los umbrales de [[barreras-control]].
+
+La clave `proceso` decide **qué umbrales** se aplican:
+
+- `fermentado` → nitrito, pH final, merma (≥ 30 %) y grados-hora (este lote).
+- `curado-directo` → nitrito, merma (≥ 35 %) y `temp_secado_max_c` (≤ 15 °C);
+  **sin** pH ni grados-hora. `aw` es opcional. Ver [[curado-directo]].
 
 ## Ficha
 
@@ -47,5 +54,6 @@ grados-hora). Secado sin [[case-hardening]] ni [[moho-indeseado]].
 
 1. Copiar este archivo a `vault/lotes/lote-NN.md`.
 2. Cambiar `id` al nombre del archivo (`lote-NN`) y actualizar fechas.
-3. Al cierre, completar `mediciones` con los valores reales.
-4. Correr `python scripts/validate.py` — debe pasar los cuatro umbrales.
+3. Fijar `proceso` (`fermentado` o `curado-directo`) según corresponda.
+4. Al cierre, completar `mediciones` con los campos que exige ese proceso.
+5. Correr `python3 scripts/validate.py` — debe pasar los umbrales del proceso.

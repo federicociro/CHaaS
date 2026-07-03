@@ -5,7 +5,7 @@ titulo: "Tecnología de barreras (hurdle) para embutido curado-fermentado"
 estado: activo
 tags: [tecnica, seguridad, barreras, hurdle]
 creado: 2026-07-02
-actualizado: 2026-07-02
+actualizado: 2026-07-03
 ---
 
 # Tecnología de barreras (hurdle technology)
@@ -50,5 +50,13 @@ Los cuatro umbrales están codificados como constantes en
 3. **Secado (semanas)**: merma progresiva → cae la a_w. Riesgo de
    [[case-hardening]] si el gradiente de humedad es muy agresivo.
 4. **Maduración**: flora de superficie deseada; controlar [[moho-indeseado]].
+
+## Variante sin fermentación
+
+Cuando el producto **no fermenta** (chorizo curado directo, estilo mediterráneo)
+no hay caída de pH y desaparecen dos barreras: `pH final` y `grados-hora`. Se
+compensa con más merma (≥ 35 %), sal ≥ 2,8 % y secado ≤ 15 °C. El validador
+aplica ese set alternativo cuando el lote lleva `proceso: curado-directo`; ver
+[[curado-directo]] para umbrales, formulación y proceso.
 
 Registro de datos por lote: ver [[lote-00]] como plantilla y `tracker/registro-lotes.xlsx`.
