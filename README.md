@@ -1,7 +1,7 @@
-# CHaaS — Charcutería as a Service
+# CHaaS — Chorizos as a Service
 
 > Sí, parece un repo de código. En realidad es de **chorizos**.
-> CHaaS = *Charcutería as a Service*: un vault de conocimiento para
+> CHaaS = *Chorizos as a Service*: un vault de conocimiento para
 > **embutido crudo-curado-fermentado** con la disciplina de un repo de software
 > (frontmatter, CI, runbooks, versionado).
 
