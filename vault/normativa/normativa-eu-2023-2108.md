@@ -20,8 +20,8 @@ exposición a nitrosaminas, siguiendo la reevaluación de EFSA.
 
 - **Nitrito de sodio (E 250)**: la cantidad **máxima *ingoing*** para productos
   cárnicos curados no tratados por calor baja a **80 mg/kg (≈ 80 ppm)** — desde
-  los 150 mg/kg previos. Este es el `LIMITE_NITRITO_PPM` que aplica
-  `scripts/validate.py`.
+  los 150 mg/kg previos. Es el techo que documenta [[barreras-control]] y que
+  se registra en el bloque `mediciones` de cada lote.
 - Se razona sobre cantidad **añadida (ingoing)**, no residual: se controla en
   formulación, pesando el nitrito (ver [[Procedimiento-embutido]] paso 1).
 - Períodos transitorios para agotar producto formulado bajo las reglas viejas;

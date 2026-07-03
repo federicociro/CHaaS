@@ -24,7 +24,7 @@ Los umbrales que hay que respetar en cada lote, documentados en
 | Nitrito de sodio (ingoing) | ≤ **80 ppm** | *C. botulinum* — [Reg. UE 2023/2108](vault/normativa/normativa-eu-2023-2108.md) |
 | pH final de fermentación | ≤ **5.3** | *S. aureus* / enterobacterias |
 | Merma (pérdida de peso) | ≥ **30 %** | a_w → estabilidad microbiológica |
-| Grados-hora hasta pH 5.3 | ≤ **665 °F·h** | toxina estafilocócica (AMI) |
+| Grados-hora hasta pH 5.3 | ≤ **370 °C·h** (base 15.5 °C) | toxina estafilocócica (AMI) |
 
 ## Estructura
 

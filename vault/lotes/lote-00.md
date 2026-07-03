@@ -14,7 +14,7 @@ mediciones:
   nitrito_ppm: 78
   ph_final: 5.1
   merma_pct: 34
-  grados_hora: 640
+  grados_hora: 356
 ---
 
 # Lote 00 — plantilla
@@ -30,7 +30,7 @@ los umbrales de [[barreras-control]].
 | Nitrito ingoing | 78 ppm | ≤ 80 ppm | OK |
 | pH final | 5.1 | ≤ 5.3 | OK |
 | Merma | 34 % | ≥ 30 % | OK |
-| Grados-hora | 640 °F·h | ≤ 665 °F·h | OK |
+| Grados-hora | 356 °C·h | ≤ 370 °C·h | OK |
 
 ## Trazabilidad
 

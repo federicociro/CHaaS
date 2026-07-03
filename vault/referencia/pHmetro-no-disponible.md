@@ -33,7 +33,7 @@ siempre hay un pHmetro calibrado a mano. Alternativas, de mejor a peor:
 ## Cálculo de grados-hora sin pH continuo
 
 Aunque no midas pH seguido, **sí** podés registrar temperatura y tiempo, y llevar
-el presupuesto de **665 °F·h** (`Σ (T_°F − 60) × h`). Si agotás el presupuesto sin
+el presupuesto de **370 °C·h** (`Σ (T_°C − 15.5) × h`). Si agotás el presupuesto sin
 confirmar pH 5.3, decidí por el lado seguro (descartar).
 
 ## Prioridad de compra

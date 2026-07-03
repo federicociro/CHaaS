@@ -24,9 +24,9 @@ termoestable.
 
 ## Decisión
 
-1. **Verificar el presupuesto de grados-hora** (`Σ (T_°F − 60) × h`):
-   - Si **≤ 665 °F·h** y el pH aún baja → dar más tiempo, vigilar de cerca.
-   - Si **> 665 °F·h** sin llegar a pH 5.3 → **descartar el lote**. No se rescata.
+1. **Verificar el presupuesto de grados-hora** (`Σ (T_°C − 15.5) × h`):
+   - Si **≤ 370 °C·h** y el pH aún baja → dar más tiempo, vigilar de cerca.
+   - Si **> 370 °C·h** sin llegar a pH 5.3 → **descartar el lote**. No se rescata.
 2. Confirmar medición: si el pHmetro no está disponible o dudás del valor, ver
    [[pHmetro-no-disponible]] para métodos alternativos antes de decidir.
 

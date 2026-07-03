@@ -32,12 +32,13 @@ SOP base para salame/longaniza fermentada. Apoyado en las barreras descritas en
 
 ## 3. Fermentación
 
-Objetivo: bajar el pH a **≤ 5.3** acumulando **≤ 665 grados-hora (°F·h)**.
+Objetivo: bajar el pH a **≤ 5.3** acumulando **≤ 370 grados-hora (°C·h)** con
+base 15.5 °C.
 
 - Cámara 22–24 °C, HR 90–92 %, temperatura máxima **< 32.2 °C**.
 - Medir pH a las 0 / 24 / 48 h. Si no hay pHmetro, ver [[pHmetro-no-disponible]].
-- Llevar la cuenta de grados-hora: `Σ (T_°F − 60) × h`. Cruzar pH 5.3 **antes**
-  de agotar el presupuesto de 665 °F·h.
+- Llevar la cuenta de grados-hora: `Σ (T_°C − 15.5) × h`. Cruzar pH 5.3 **antes**
+  de agotar el presupuesto de 370 °C·h.
 
 > Si a las 48 h el pH sigue > 5.3 → activar runbook [[fermentacion-fallida]].
 
