@@ -53,3 +53,10 @@ Los umbrales viven en esta nota y en la ficha de cada lote (bloque
 4. **Maduración**: flora de superficie deseada; controlar [[moho-indeseado]].
 
 Registro de datos por lote: ver [[lote]] como plantilla y `tracker/registro-lotes.xlsx`.
+
+## Barrera transversal: higiene
+
+La higiene y desinfección funcionan como **PPC transversal** — no aparecen en
+la tabla de umbrales del lote pero condicionan a todas las demás. Ver
+[[higiene-desinfeccion]] para producto, dilución, tiempo de contacto y
+frecuencia por superficie/equipo.

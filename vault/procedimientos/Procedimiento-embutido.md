@@ -94,7 +94,7 @@ Si algún componente supera 4 °C, volver a frío 20–30 min antes de continuar
 
 ## 7. Higiene y desinfección
 
-Detalle en nota aparte: [[higiene-desinfeccion]] (pendiente).
+Detalle en nota aparte: [[higiene-desinfeccion]].
 Puntos mínimos por lote:
 
 - Mesa, cuchillos, picadora, embutidora, boquillas: limpiar con detergente,
