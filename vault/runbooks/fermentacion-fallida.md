@@ -28,7 +28,7 @@ termoestable.
    - Si **≤ 370 °C·h** y el pH aún baja → dar más tiempo, vigilar de cerca.
    - Si **> 370 °C·h** sin llegar a pH 5.3 → **descartar el lote**. No se rescata.
 2. Confirmar medición: si el pHmetro no está disponible o dudás del valor, ver
-   [[pHmetro-no-disponible]] para métodos alternativos antes de decidir.
+   [[phmetro-plan-de-compra]] para métodos alternativos antes de decidir.
 
 ## Acción correctiva (para el próximo lote)
 

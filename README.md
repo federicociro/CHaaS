@@ -48,7 +48,7 @@ chaas/
     ├── procedimientos/Procedimiento-embutido.md
     ├── runbooks/                 # case-hardening, moho-indeseado, fermentacion-fallida
     ├── normativa/normativa-eu-2023-2108.md
-    └── referencia/pHmetro-no-disponible.md
+    └── referencia/phmetro-plan-de-compra.md
 ```
 
 > Los **lotes reales** (`vault/lotes/`) NO viven en este repo: contienen datos

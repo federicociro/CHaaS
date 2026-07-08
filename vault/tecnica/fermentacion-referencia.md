@@ -22,7 +22,7 @@ Marco general para una fase de fermentación con cultivo iniciador:
   toxina estafilocócica.
 - **Cámara** 22–24 °C, HR 90–92 %, temperatura máxima **< 32,2 °C**.
 - **Medición de pH** a las 0 / 24 / 48 h. Si no hay pHmetro, ver
-  [[pHmetro-no-disponible]].
+  [[phmetro-plan-de-compra]].
 - **Cálculo de grados-hora**: `Σ (T_°C − 15,5) × h`. Cruzar pH 5,3 **antes**
   de agotar el presupuesto de 370 °C·h.
 
