@@ -47,7 +47,8 @@ Los umbrales viven en esta nota y en la ficha de cada lote (bloque
 
 1. **Embutido / t=0**: nitrito + sal + cultivo iniciador. Barrera química arranca.
 2. **Fermentación (24–72 h)**: el cultivo baja el pH. Acumular ≤ 370 °C·h hasta
-   cruzar pH 5.3. Ver [[fermentacion-fallida]] si no acidifica.
+   cruzar pH 5.3. Si no acidifica en el presupuesto de grados-hora, ver el
+   apéndice de decisión en [[fermentacion-referencia]].
 3. **Secado (semanas)**: merma progresiva → cae la a_w. Riesgo de
    [[case-hardening]] si el gradiente de humedad es muy agresivo.
 4. **Maduración**: flora de superficie deseada; controlar [[moho-indeseado]].

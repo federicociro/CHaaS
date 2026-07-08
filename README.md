@@ -46,7 +46,7 @@ chaas/
     ├── plantillas/lote.md         # plantilla anonimizada (bloque `mediciones`)
     ├── tecnica/barreras-control.md
     ├── procedimientos/Procedimiento-embutido.md
-    ├── runbooks/                 # case-hardening, moho-indeseado, fermentacion-fallida
+    ├── runbooks/                 # case-hardening, moho-indeseado
     ├── normativa/normativa-eu-2023-2108.md
     └── referencia/phmetro-plan-de-compra.md
 ```
@@ -113,4 +113,3 @@ Guías de acción para defectos frecuentes de proceso:
 
 - [Case hardening](vault/runbooks/case-hardening.md) — corteza sellada, centro húmedo.
 - [Moho indeseado](vault/runbooks/moho-indeseado.md) — flora de superficie no deseada.
-- [Fermentación fallida](vault/runbooks/fermentacion-fallida.md) — no cruza pH 5.3 (seguridad).

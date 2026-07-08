@@ -39,4 +39,4 @@ similares) que forma una capa fina y aterciopelada.
 - HR y ventilación según [[Procedimiento-embutido]] paso 4.
 - Evitar bolsas de aire y condensación; no amontonar piezas.
 
-Relacionado: [[case-hardening]] · [[fermentacion-fallida]]
+Relacionado: [[case-hardening]]
