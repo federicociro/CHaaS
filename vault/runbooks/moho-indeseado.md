@@ -32,38 +32,42 @@ formato).
 
 ### Deseado — velo blanco parejo (*P. nalgiovense*)
 
-> Superficie cubierta por una capa fina, blanca y aterciopelada. No penetra,
-> no es peluda, no tiene manchas de color. Es lo que buscamos: ocupa el
-> nicho e inhibe a los indeseados.
+![Colonias de Penicillium nalgiovense y especies afines sobre agar extracto de malta, mostrando el velo blanco parejo característico de la flora deseada en embutidos curados](attachments/moho-blanco-deseado-01.jpg)
 
-_Pendiente foto: `moho-blanco-deseado-01.jpg`._
-<!-- ![[moho-blanco-deseado-01.jpg|400]] -->
+> Colonias de *P. nalgiovense* (y especies afines de embutidos curados) sobre
+> agar extracto de malta: velo blanco parejo, aterciopelado, sin manchas de
+> color. Es lo que buscamos: ocupa el nicho e inhibe a los indeseados.
+> Referencia visual, no foto del taller. Crédito: Lo, Y.-C. et al. (2023),
+> CC BY 4.0 — ver `attachments/README.md`.
 
 ### Indeseado — verde (*Penicillium* verde)
 
-> Colonias verde intenso, pulverulentas, con halo. Aparecen con HR excesiva o
-> ventilación insuficiente. Riesgo de micotoxinas → descartar la pieza si
-> está extendido o penetrante.
+![Esporas verde-azuladas de Penicillium expansum en primer plano sobre una superficie orgánica, con la textura pulverulenta típica del moho verde](attachments/moho-verde-01.jpg)
 
-_Pendiente foto: `moho-verde-01.jpg`._
-<!-- ![[moho-verde-01.jpg|400]] -->
+> *P. expansum* en primer plano: esporas verde-azuladas, pulverulentas, con
+> el halo típico. Aparece con HR excesiva o ventilación insuficiente. Riesgo
+> de micotoxinas → descartar la pieza si está extendido o penetrante.
+> Foto sobre fruta (no salame), sirve como referencia de aspecto y color.
+> Crédito: H.J. Larsen, Bugwood.org, CC BY 3.0 US.
 
 ### Indeseado — negro (*Cladosporium* / *Aspergillus niger*)
 
-> Manchas negras, secas o algo grasas, que suelen aparecer sobre corteza
-> húmeda o zonas de condensación. Descartar la pieza; revisar cámara.
+![Colonia de Aspergillus niger en placa de agar mostrando el aspecto negro pulverulento característico de las esporas maduras](attachments/moho-negro-01.jpg)
 
-_Pendiente foto: `moho-negro-01.jpg`._
-<!-- ![[moho-negro-01.jpg|400]] -->
+> Colonia de *A. niger* sobre agar patata-dextrosa: esporulación negra
+> pulverulenta muy característica. Sobre corteza de embutido aparece como
+> manchas negras secas o algo grasas, en zonas de condensación o humedad
+> alta. Descartar la pieza; revisar cámara y ver [[higiene-desinfeccion]].
+> Crédito: Saxon Vinkovic, CC BY-SA 4.0.
 
 ### Indeseado — peludo largo (mucor / rhizopus)
 
-> Filamentos largos, algodonosos, blanco-grisáceos, que crecen visiblemente
-> "hacia afuera". Delatan HR alta y aire estancado. Corregir cámara y
-> evaluar pieza a pieza.
+![Rhizopus stolonifer creciendo sobre una fresa, con filamentos algodonosos blancos-grisáceos y esporangios negros en los extremos](attachments/moho-peludo-01.jpg)
 
-_Pendiente foto: `moho-peludo-01.jpg`._
-<!-- ![[moho-peludo-01.jpg|400]] -->
+> *Rhizopus stolonifer*: filamentos largos, algodonosos, blanco-grisáceos,
+> con esporangios negros en los extremos. Sobre embutido delata HR alta y
+> aire estancado. Corregir cámara y evaluar pieza a pieza.
+> Crédito: Eric McKenzie / PaDIL, CC BY 3.0 AU.
 
 > Fotografiar con fondo neutro, luz difusa y regla/moneda para escala. Ver
 > convenciones en `vault/runbooks/attachments/README.md`.

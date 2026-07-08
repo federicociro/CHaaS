@@ -20,4 +20,13 @@ Carpeta para imágenes de referencia usadas por los runbooks de
 
 ## Índice
 
-_(vacío — se irá poblando a medida que aparezcan casos reales en el taller)_
+Imágenes actualmente en la carpeta:
+
+| Archivo | Uso en runbook | Autor | Fuente | Licencia |
+|---|---|---|---|---|
+| `moho-blanco-deseado-01.jpg` | [[moho-indeseado#Deseado — velo blanco parejo (*P. nalgiovense*)]] | Lo, Y.-C. et al. (2023) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Domestication_in_dry-cured_meat_Penicillium_fungi.jpg) — publicado en *Evolutionary Applications* [doi:10.1111/eva.13591](https://doi.org/10.1111/eva.13591) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `moho-verde-01.jpg` | [[moho-indeseado#Indeseado — verde (*Penicillium* verde)]] | H.J. Larsen, Bugwood.org | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Penicillium_expansum.jpg) — original en [insectimages.org](http://www.insectimages.org/browse/detail.cfm?imgnum=5362200) | [CC BY 3.0 US](https://creativecommons.org/licenses/by/3.0/us/deed.en) |
+| `moho-negro-01.jpg` | [[moho-indeseado#Indeseado — negro (*Cladosporium* / *Aspergillus niger*)]] | Saxon Vinkovic | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Aspergillus_niger_2.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `moho-peludo-01.jpg` | [[moho-indeseado#Indeseado — peludo largo (mucor / rhizopus)]] | Eric McKenzie | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Rhizopus_stolonifer_on_a_strawberry_showing_black_sporangia.jpg) — vía PaDIL | [CC BY 3.0 AU](https://creativecommons.org/licenses/by/3.0/au/deed.en) |
+
+> **Nota**: son fotos de referencia visual (colonias en agar / superficie de fruta), no del taller. La idea es reemplazarlas por fotos propias cuando aparezcan casos reales; los créditos se mantienen mientras las imágenes CC estén en uso.
