@@ -52,6 +52,6 @@ base 15.5 °C.
 ## 5. Cierre de lote
 
 - Registrar `nitrito_ppm`, `ph_final`, `merma_pct`, `grados_hora` en la nota del
-  lote (plantilla: [[lote-00]]) y en el tracker.
+  lote (plantilla: [[lote]]) y en el tracker.
 - `scripts/validate.py` verifica que los cuatro valores respeten los umbrales
   antes de dar el lote por liberado.

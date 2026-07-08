@@ -43,13 +43,18 @@ chaas/
 ├── tracker/
 │   └── registro-lotes.xlsx       # 4 hojas: Lotes, Umbrales, Merma, Dashboard
 └── vault/
-    ├── lotes/lote-00.md          # plantilla de lote (bloque `mediciones`)
+    ├── plantillas/lote.md         # plantilla anonimizada (bloque `mediciones`)
     ├── tecnica/barreras-control.md
     ├── procedimientos/Procedimiento-embutido.md
     ├── runbooks/                 # case-hardening, moho-indeseado, fermentacion-fallida
     ├── normativa/normativa-eu-2023-2108.md
     └── referencia/pHmetro-no-disponible.md
 ```
+
+> Los **lotes reales** (`vault/lotes/`) NO viven en este repo: contienen datos
+> privados del taller (pesos, mediciones, fechas). Están ignorados por git —
+> ver `.gitignore`. Para crear uno, copiar `vault/plantillas/lote.md` a
+> `vault/lotes/lote-NN.md` en tu bóveda local.
 
 ## Convención de notas
 

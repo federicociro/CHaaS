@@ -52,4 +52,4 @@ Los umbrales viven en esta nota y en la ficha de cada lote (bloque
    [[case-hardening]] si el gradiente de humedad es muy agresivo.
 4. **Maduración**: flora de superficie deseada; controlar [[moho-indeseado]].
 
-Registro de datos por lote: ver [[lote-00]] como plantilla y `tracker/registro-lotes.xlsx`.
+Registro de datos por lote: ver [[lote]] como plantilla y `tracker/registro-lotes.xlsx`.

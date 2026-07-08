@@ -24,3 +24,6 @@ Thumbs.db
 private/
 *.privado.md
 *.local.md
+
+# Lotes reales — privados por política (ver issue #2)
+vault/lotes/

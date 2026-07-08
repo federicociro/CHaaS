@@ -41,4 +41,4 @@ confirmar pH 5.3, decidí por el lado seguro (descartar).
 Un pHmetro de bolsillo con calibración por buffers es la inversión de mayor
 impacto en seguridad del taller. Mientras tanto, tiras de rango estrecho.
 
-Relacionado: [[Procedimiento-embutido]] · [[lote-00]] · [[fermentacion-fallida]]
+Relacionado: [[Procedimiento-embutido]] · [[lote]] · [[fermentacion-fallida]]

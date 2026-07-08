@@ -36,7 +36,7 @@ excedente que derive en nitrosaminas. Bajar de ahí compromete la seguridad.
 ## Aplicación en el repo
 
 Todo lote debe registrar `nitrito_ppm ≤ 80` en su frontmatter (plantilla
-[[lote-00]]). El validador falla el lote si se supera.
+[[lote]]). El validador falla el lote si se supera.
 
 > Nota: verificar siempre el texto consolidado en EUR-Lex; las cifras exactas por
 > categoría de producto están en el Anexo. Este resumen es orientativo, no

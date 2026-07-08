@@ -42,4 +42,4 @@ termoestable.
 Anotar el lote fallido con `estado: archivado` y `ph_final` real. `validate.py`
 lo marcará fuera de umbral, dejando traza de por qué no se liberó.
 
-Relacionado: [[Procedimiento-embutido]] · [[barreras-control]] · [[lote-00]]
+Relacionado: [[Procedimiento-embutido]] · [[barreras-control]] · [[lote]]
