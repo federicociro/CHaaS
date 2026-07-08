@@ -34,26 +34,6 @@ jobs:
         with:
           globs: "vault/**/*.md README.md"
 
-  quartz:
-    name: quartz build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Clonar Quartz
-        run: git clone --depth 1 https://github.com/jackyzha0/quartz.git .quartz-build
-      - name: Preparar contenido
-        run: |
-          rm -rf .quartz-build/content
-          cp -r vault .quartz-build/content
-      - name: Build
-        working-directory: .quartz-build
-        run: |
-          npm ci
-          npx quartz build
-
   links:
     name: lychee (link check semanal)
     runs-on: ubuntu-latest

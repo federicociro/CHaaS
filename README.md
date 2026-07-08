@@ -11,8 +11,10 @@ Notas, procedimientos y runbooks para producir salame / chorizo seco de forma
 reproducible y segura. Cada lote se documenta como una nota Markdown con
 metadata YAML; el CI valida que el vault esté bien formado antes de publicarlo.
 
-El contenido es Markdown estilo Obsidian (frontmatter + `[[wikilinks]]`)
-publicable con [Quartz](https://quartz.jzhao.xyz/).
+El contenido es Markdown estilo Obsidian (frontmatter + `[[wikilinks]]`),
+pensado para uso **local con Obsidian**. Compatible con cualquier publicador
+que entienda el formato Obsidian (Quartz, Obsidian Publish, etc.) si en el
+futuro se desea publicar.
 
 ## Barreras de inocuidad (referencia)
 
@@ -37,7 +39,7 @@ chaas/
 ├── scripts/
 │   └── validate.py               # frontmatter + wikilinks
 ├── .github/workflows/
-│   └── ci.yml                    # validate + markdownlint + quartz; lychee semanal
+│   └── ci.yml                    # validate + markdownlint; lychee semanal
 ├── tracker/
 │   └── registro-lotes.xlsx       # 4 hojas: Lotes, Umbrales, Merma, Dashboard
 └── vault/
@@ -80,6 +82,10 @@ Los enlaces entre notas usan `[[nombre-de-archivo]]` (sin extensión), con
 
 ## Uso
 
+1. **Abrir el vault en Obsidian**: apuntar Obsidian a la carpeta `vault/` como
+   bóveda. El flujo diario (leer, editar notas, seguir wikilinks) ocurre ahí.
+2. **Validar y lintear** antes de commitear:
+
 ```bash
 # Entorno
 python -m venv .venv && source .venv/bin/activate
@@ -90,8 +96,6 @@ python scripts/validate.py
 
 # Lint de Markdown
 npx markdownlint-cli2
-
-# Publicar con Quartz (ver .github/workflows/ci.yml para el flujo de CI)
 ```
 
 `validate.py` sale con código ≠ 0 si falta frontmatter o hay un wikilink roto —
